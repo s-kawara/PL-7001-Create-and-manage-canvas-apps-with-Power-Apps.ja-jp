@@ -1,258 +1,258 @@
 ---
 lab:
-    title: 'Lab 5: External data'
-    module: 'Module 5: Work with external data in a Power Apps canvas app'
+    title: 'ラボ 5: 外部データ'
+    module: 'モジュール 5: Power Apps キャンバス アプリで外部データを操作する'
 ---
 
-# Practice Lab 5 – External data
+# 演習 5 – 外部データ
 
-In this lab you will add an external data source.
+このラボでは、外部データ ソースを追加します。
 
-## What you will learn
+## 学習する内容
 
-- How to add a SharePoint list to your canvas app
-- How to use collections
-- How to use Patch
-- How to use Office365Users connector
+- SharePoint リストをキャンバス アプリに追加する方法
+- コレクションの使用方法
+- Patch 関数の使い方
+- Office365Usersコネクタの使用方法
 
-## High-level lab steps
+## ハイレベルラボの手順
 
-- Create a SharePoint list for Bookings
-- Add the SharePoint list as a gallery
-- Store selected records from a gallery
-- Use Patch to set the decision for a booking request
-- Use Office365User connector to display the user's details.
+- Booking 用の SharePoint リストを作成する
+- SharePoint リストをギャラリーとして追加する
+- ギャラリーから選択したレコードを保存する
+- Patch 関数を使用してBooking リクエストの決定を設定する
+- Office365User コネクタを使用してユーザーの詳細を表示する
   
-## Prerequisites
+## 前提条件
 
-- Must have completed **Lab 4: Build the UI**
+-  **ラボ 4: UI を構築する** を完了している必要があります。
 
-## Detailed steps
+## 詳細な手順
 
-## Exercise 1 – Create SharePoint list
+## 演習 1 – SharePoint リストの作成
 
-### Task 1.1 Create a SharePoint site
+### タスク 1.1 SharePoint サイトを作成する
 
-1. In the [Power Apps maker portal](https://make.powerapps.com) select the **App launcher** in the top left of the browser window and then select **OneDrive**.
+1. [Power Apps maker portal](https://make.powerapps.com) で、ブラウザーの左上にある **App launcher** を選択し、 **OneDrive** を選択します。
 
-1. In SharePoint, select **+Create site**.
+1. SharePoint で、 **+Create site** を選択します。
 
-1. Select **Team site**, select **Standard team** template, and select **Use template**.
+1. **Team site** を選択し、 **Standard team** テンプレートを選択し、 **Use template** を選択します。
 
-1. Enter `Pet boarding` for **Site name** and select **Next**.
+1. **Site name** に、 `Pet boarding` と入力し、 **Next** を選択します。
 
-1. Select **Create site**.
+1. **Create site** を選択します。
 
-1. Select **Finish**.
+1. **Finish** を選択します。
 
-### Task 1.2 Create a SharePoint list
+### タスク 1.2 SharePoint リストを作成する
 
-1. In the SharePoint site, select **+ New** and then select **List**.
+1. SharePoint サイトで、 **+ New** を選択し、次に、 **List** を選択します。
 
     ![Screenshot of new SharePoint list.](../media/new-sharepoint-list.png)
 
-1. Select **Blank list**
+1. **Blank list** を選択します。
 
-1. Enter `Bookings` for **Name**  and select **Create**.
+1. **Name**  を選択し、 `Bookings` を入力し、 **Create** を選択します。
 
-1. Select **Add column**, select **Text**, and select **Next**.
+1. **Add column** 、 **Text**　、 **Next** の順に選択します。
 
-1. In the **Create a column** pane, enter or select the following values:
+1. **Create a column** ペインで、次の値を入力または設定します:
 
-   1. Name: `Pet Name`
-   1. Data type: **Single line of text**
+   1. 名前: `Pet Name`
+   1. データ型: **Single line of text**
 
-1. Select **Save**.
+1. **Save** を選択します。
 
-1. Select **Add column**, select **Text**, and select **Next**.
+1. **Add column** 、 **Text** 、 **Next** を順に選択します。
 
-1. In the **Create a column** pane, enter or select the following values:
+1. **Create a column** ペインで、次の値を入力または選択します:
 
-   1. Name: `Owner Name`
-   1. Data type: **Single line of text**
+   1. 名前: `Owner Name`
+   1. データ型: **Single line of text**
 
-1. Select **Save**.
+1. **Save** を選択します。
 
-1. Select **Add column**, select **Date and time**, and select **Next**.
+1. **Add column** 、 **Date and time** 、 **Next** を順に選択します。
 
-1. In the **Create a column** pane, enter or select the following values:
+1. **Create a column** ペインで、次の値を入力または選択します:
 
-   1. Name: `Start Date`
-   1. Data type: **Date and time**
+   1. 名前: `Start Date`
+   1. データ型: **Date and time**
 
-1. Select **Save**.
+1. **Save** を選択します。
 
-1. Select **Add column**, select **Date and time**, and select **Next**.
+1. **Add column** 、 **Date and time** 、 **Next** を順に選択します。
 
-1. In the **Create a column** pane, enter or select the following values:
+1. **Create a column** ペインで、次の値を入力または選択します:
 
-   1. Name: `End Date`
-   1. Data type: **Date and time**
+   1. 名前: `End Date`
+   1. データ型: **Date and time**
 
-1. Select **Save**.
+1. **Save** を選択します。
 
-1. Copy the first part of the URL of the SharePoint site, for example `https://m365x99999999.sharepoint.com/sites/Petboarding/`
+1. SharePoint サイトのURL の最初の部分をコピーします。例: `https://m365x99999999.sharepoint.com/sites/Petboarding/`
 
-## Exercise 2 – Add SharePoint list to canvas app
+## 演習 2 – SharePoint リストをキャンバス アプリに追加する
 
-### Task 2.1 - Edit the app
+### タスク 2.1 - アプリを編集する
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Power Apps メーカー ポータル <https://make.powerapps.com> に移動します。
 
-1. Make sure you are in the **Dev One** environment.
+1. **Dev One** 環境にいることを確認します。
 
-1. Select the **Apps** tab from the left-side menu.
+1. 左側メニューから **Apps** タブを選択します。
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Edit > Edit in new tab**.
+1. **Booking Request app** を選択し、コマンド (**...**) を選択して、 **Edit > Edit in new tab** を選択します。
 
-### Task 2.2 - Add SharePoint as a data source
+### タスク 2.2 - SharePoint をデータ ソースとして追加する
 
-1. In the app authoring menu, select **Data**.
+1. アプリの作成メニューで **Data** を選択します。
 
-1. Select the drop-down caret next to **Add data** and enter `SharePoint` in **Search**.
+1. **Add data** の横にあるドロップダウンキャレットを選択し、 **Search** に 'SharePoint' と入力します。
 
     ![Screenshot of select SharePoint as data source.](../media/studio-data-sharepoint.png)
 
-1. Select **SharePoint**.
+1. **SharePoint** を選択します。
 
-1. Select **Connect directly (cloud services)** and select **Connect**.
+1. **Connect directly (cloud services)** を選択し、 **Connect** を選択します。
 
-1. Enter the URL of the SharePoint site you created earlier in this lab
+1. このラボで前に作成した SharePoint サイトの URL を入力します。
 
     ![Screenshot of connect to SharePoint site.](../media/select-sharepoint-site.png)
 
-1. Select **Connect**.
+1. **Connect** を選択します。
 
-1. Select **Bookings**.
+1. **Bookings** を選択します。
 
     ![Screenshot of connect to SharePoint list.](../media/select-sharepoint-list.png)
 
-1. Select **Connect**.
+1. **Connect** を選択します。
 
-### Task 2.3 - Add gallery for SharePoint list
+### タスク 2.3 - SharePoint リストのギャラリーを追加する
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Vertical gallery**.
+1. **Vertical gallery** を選択します。
 
-1. Select **Bookings** for data source.
+1. データソースとして **Bookings** を選択します。
 
-1. Select **Title and subtitle** for **Layout**.
+1. **Layout** で **Title and subtitle** を選択します。
 
-1. Select **6 selected** next to **Fields**
+1. **Fields** の横にある **6 selected** を選択します。
 
-1. Select **Decision** for **Title**.
+1. **Title** に **Decision** を選択します。
 
-1. Select **Start Date** for **Subtitle**.
+1. **Subtitle** に **Start Date** を選択します。
 
-1. Close the Data pane.
+1. データ ペインを閉じます。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the gallery to `BookingList`.
+1. ギャラリーの名前を `BookingList` に変更します。
 
-1. Set the properties of the gallery as follows:
+1. ギャラリーのプロパティを次のように設定します:
 
    1. X=`1000`
    1. Y=`80`
    1. Height=`575`
    1. Width=`250`
 
-## Exercise 3 – Collections
+## 演習 3 – コレクション
 
-### Task 3.1 Create Collection
+### タスク 3.1 コレクションの作成
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand **BookingRequestList**.
+1. **BookingRequestList** を展開します。
 
-1. Select **NextArrow**.
+1. **NextArrow** を選択します。
 
-1. Set the **OnSelect** property of NextArrow to:
+1. **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Collect(colRequests, ThisItem)
     ```
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Select the **App** object.
+1. **App** オブジェクトを選択します。
 
-1. Set the **OnStart** property of NextArrow to:
+1. **OnStart** プロパティを次のように設定します:
 
     ```powerappsfl
     Clear(colRequests)
     ```
 
-## Exercise 4 – Patch
+## 演習 4 – Patch 関数
 
-### Task 4.1 Decline booking request
+### タスク 4.1 予約リクエストを拒否する
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリ作成メニューで、 **Tree view** を選択します。
 
-1. Select **BookingRequestList**.
+1. **BookingRequestList** を選択します。
 
-1. Select the **pencil** icon in the top-left of the gallery control.
+1. ギャラリーコントロール左上にある **pencil** アイコンを選択します。
 
     ![Screenshot of editing the gallery.](../media/edit-gallery.png)
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Expand **Icons**.
+1. **Icons** を展開します。
 
-1. Select **Blocked**. The icon will be added to each row in the gallery.
+1. **Blocked** を選択します。アイコンは、ギャラリーの各行に追加されます。
 
     ![Screenshot of editing the gallery.](../media/icon-added-gallery.png)
 
-1. Set the properties of the icon as follows:
+1. アイコンのプロパティを次のように設定します:
 
    1. X=`150`
    1. Y=`40`
    1. Height=`30`
    1. Width=`30`
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the icon to `DeclineIcon`.
+1. アイコンの名前を `DeclineIcon` に変更します。
 
-1. Set the **OnSelect** property of **DeclineIcon** to:
+1. **DeclineIcon** の **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Patch('Booking Requests', ThisItem, {Decision: 'Decision (Booking Requests)'.Declined})
     ```
 
-## Exercise 5 – Office 365 Users
+## 演習 5 – Office 365 ユーザー
 
-### Task 5.1 Add Office 365 Users as a data source
+### タスク 5.1 Office 365 ユーザーをデータ ソースとして追加する
 
-1. In the app authoring menu, select **Data**.
+1. アプリの作成メニューで、 **Data** を選択します。
 
-1. Select the drop-down caret next to **Add data** and enter `Office 365` in **Search**.
+1. **Add data** の横にあるドロップダウンキャレットを選択し、 **Search** に `Office 365` と入力します。
 
-1. Select **Office 365 Users**.
+1. **Office 365 Users** を選択します。
 
-1. Select **Connect**.
+1. **Connect** を選択します。
 
-### Task 5.2 Display the user's country
+### タスク 5.2 ユーザーの国を表示する
 
-1. Click outside of the gallery on the blank canvas.
+1. 空白のキャンバスでギャラリーの外側をクリックします。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Text label**.
+1. **Text label** を選択します。
 
-1. Drag the label to the top right of the screen next to the UserLabel.
+1. ラベルを画面右上の UserLabel の隣にドラッグします。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the label to `UserDetailsLabel`.
+1. ラベルの名前を `UserDetailsLabel` に変更します。
 
-1. Set the **OnSelect** property of **UserDetailsLabel** to:
+1. **UserDetailsLabel** の **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Office365Users.MyProfile().Country
     ```
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある **Save** を選択します。
 
-1. Select the **<- Back** button from the top left of the command bar, and select **Leave** to exit the app.
+1. コマンドバーの左上にある **<- Back** ボタンを選択し、 **Leave** を選択し、アプリを終了します。
