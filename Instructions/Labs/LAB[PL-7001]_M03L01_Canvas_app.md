@@ -1,107 +1,107 @@
 ---
 lab:
-    title: 'Lab 3: Create a canvas app'
-    module: 'Module 3: Customize a canvas app in Power Apps'
+    title: 'ラボ 3: キャンバス アプリを作成する'
+    module: 'モジュール 3: Power Apps でキャンバス アプリをカスタマイズする'
 ---
 
-# Practice Lab 3 – Create a canvas app
+# 演習 3 – キャンバス アプリを作成する
 
-In this lab you will design and build a canvas app from blank, add a data source and a gallery.
+このラボでは、キャンバス アプリをゼロから設計して構築し、データ ソースとギャラリーを追加します。
 
-## What you will learn
+## 学習する内容
 
-- How to create a canvas app with a gallery linked to a data source
-- How to format fields with Power Fx formulaa
+- データ ソースにリンクされたギャラリーを含むキャンバス アプリを作成する方法
+- Power Fx 数式を使用してフィールドを書式設定する方法
 
-## High-level lab steps
+## ハイレベルラボの手順
 
-- Create a canvas app from blank
-- Add a data source to the app
-- Add a gallery to the app
-- Configure the fields in the gallery
+- キャンバス アプリをブランクから作成する
+- データソースをアプリに追加する
+- アプリにギャラリーを追加する
+- ギャラリーのフィールドを構成する
   
-## Prerequisites
+## 前提条件
 
-- Must have completed **Lab 2: Data model**
+- **ラボ 2: データモデル** を完了している必要があります。
 
-## Detailed steps
+## 詳細な手順
 
-## Exercise 1 – Create a canvas app
+## 演習 1 – キャンバス アプリを作成する
 
-### Task 1.1 - Create the app
+### タスク 1.1 - アプリを作成する
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Power Apps メーカー ポータル <https://make.powerapps.com> に移動します。
 
-1. Make sure you are in the **Dev One** environment.
+1. **Dev One** 環境にいることを確認してください。
 
-1. Select the **+ Create** tab from the left-side menu.
+1. 左側のメニューから **+ Create** タブを選択します。
 
-1. Select the **Blank app** tile under **Start from**.
+1. **Start from** の下にある **Blank app** タイルを選択します。
 
     ![Screenshot of create from blank.](../media/create-from-blank.png)
 
-1. Select **Create** under the **Blank canvas app** tile.
+1. **Blank canvas app** タイルの下にある **Create** を選択します。
 
-1. Enter `Booking Request app` for **App name**.
+1.  **App name** に、 `Booking Request app` と入力します。
 
-1. Select **Tablet** for **Format**.
+1.  **Format** で **Tablet** を選択します。
 
     ![Screenshot of new app name.](../media/app-name-format.png)
 
-1. Select **Create**.
+1. **Create** を選択します。
 
-1. Wait for the app to be built.
+1. アプリが構築されるまで待ちます。
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある **Save** を選択します。
 
-### Task 1.2 - Add data source
+### タスク 1.2 - データ ソースの追加
 
-1. In the app authoring menu, select **Data**.
+1. アプリの作成メニューで、 **Data** を選択します。
 
     ![Screenshot of Data pane.](../media/studio-data-pane.png)
 
-1. Select the drop-down caret next to **Add data** and enter `Booking` in **Search**.
+1. **Add data** の横にあるドロップダウンキャレットを選択し、 **Search** に 'Booking' と入力します。
 
     ![Screenshot of select data source.](../media/studio-data-search.png)
 
-1. Select the **Booking Requests** Microsoft Dataverse table.
+1. **Booking Requests** Microsoft Dataverse テーブルを選択します。
 
-### Task 1.3 - Configure the main screen
+### タスク 1.3 - メイン画面の構成
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Select **Screen1** in the tree view and select the ellipses (**...**) and select **Rename**.
+1. ツリービューで、 **Screen1** を選択し、省略記号(**...**) を選択し、 **Rename** を選択します。
 
-1. Enter `MainScreen`.
+1. `MainScreen` を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Rectangle**.
+1. **Rectangle** を選択します。
 
-1. Drag the rectangle to the top left of the screen.
+1. 四角形を画面の左上にドラッグします。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the rectangle to `HeaderRect`.
+1. 四角形の名前を `HeaderRect` に変更します。
 
-1. Set the properties of the rectangle as follows:
+1. 長方形のプロパティを次のように設定します:
 
    1. X=`0`
    1. Y=`0`
    1. Height=`80`
    1. Width=`Parent.Width`
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Text label**.
+1. **Text label** を選択します。
 
-1. Drag the label to the top left of the screen.
+1. ラベルを画面の左上にドラッグします。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the label to `HeaderLabel`.
+1. ラベルの名前を、 `HeaderLabel` に変更します。
 
-1. Set the properties of the label as follows:
+1. ラベルのプロパティを次のように設定します:
 
    1. X=`0`
    1. Y=`0`
@@ -114,61 +114,61 @@ In this lab you will design and build a canvas app from blank, add a data source
 
     ![Screenshot of the main screen with header.](../media/main-screen.png)
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある、 **Save** を選択します。
 
-### Task 1.4 - Add a gallery
+### タスク 1.4 - ギャラリーを追加する
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Vertical gallery**.
+1. **Vertical gallery** を選択します。
 
     ![Screenshot of adding a gallery.](../media/add-gallery.png)
 
-1. Select **Booking Requests**.
+1. **Booking Requests** を選択します。
 
     ![Screenshot of gallery properties.](../media/gallery-properties.png)
 
-1. Select **Title, subtitle, and body** for **Layout**.
+1. **Layout** で、 **Title, subtitle, and body** を選択します。
 
-1. Select **7 selected** next to **Fields**
+1. **Fields** の横にある **7 selected** を選択します。
 
-1. Select **Cost** for **Body**.
+1. **Body** に **Cost** を選択します。
 
-1. Select **Decision** for **Subtitle**.
+1. **Subtitle** で **Decision** を選択します。
 
-1. Select **Pet Name** for **Title**.
+1. **Title** として、 **Pet Name** を選択します。
 
     ![Screenshot of gallery fields.](../media/select-fields.png)
 
-1. Close the Data pane.
+1. データペインを閉じます。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the gallery to `BookingRequestList`.
+1. ギャラリーの名前を `BookingRequestList` に変更します。
 
-1. Set the properties of the gallery as follows:
+1. ギャラリーのプロパティを次のように設定します:
 
    1. X=`0`
    1. Y=`80`
    1. Height=`575`
    1. Width=`250`
 
-### Task 1.5 - Format the currency field
+### タスク 1.5 - 通貨フィールドのフォーマットを設定する
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand the gallery.
+1. ギャラリーを展開します。
 
-1. Select the body.
+1. body を選択します。
 
     ![Screenshot of body field selected.](../media/body.png)
 
-1. Set the **Text** property to the formula:
+1. **Text** プロパティを次の数式に設定します:
 
     ```powerappsfl
     Text(Value(ThisItem.Cost), "$#,##0.00")
     ```
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある **Save** を選択します。
 
-1. Select the **<- Back** button from the top left of the command bar, and select **Leave** to exit the app.
+1. コマンドバーの左上にある **<- Back** ボタンを選択し、 **Leave** を選択し、アプリを終了します。
