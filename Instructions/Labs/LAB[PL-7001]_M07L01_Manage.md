@@ -1,105 +1,105 @@
 ---
 lab:
-    title: 'Lab 7: Manage canvas apps'
-    module: 'Module 7: Publish, share, and maintain a canvas app'
+    title: 'ラボ 7: キャンバス アプリを管理する'
+    module: 'モジュール 7: キャンバス アプリを公開、共有、および保守する'
 ---
 
-# Practice Lab 7 – Manage canvas apps
+# 演習 7 – キャンバス アプリの管理
 
-In this lab you will manage your canvas app.
+このラボでは、キャンバス アプリを管理します。
 
-## What you will learn
+## 学習する内容
 
-- How to share canvas apps
-- How to manage canvas apps versions
-- How to publish canvas apps
-- How to export canvas apps
+- キャンバス アプリを共有する方法
+- キャンバス アプリのバージョンを管理する方法
+- キャンバス アプリを公開する方法
+- キャンバス アプリをエクスポートする方法
 
-## High-level lab steps
+## ハイレベルラボの手順
 
-- Share a canvas app
-- View canvas app versions
-- Publish a canvas app
-- Export a canvas app
+- キャンバス アプリを共有する
+- キャンバス アプリのバージョンを表示する
+- キャンバス アプリを公開する
+- キャンバス アプリをエクスポートする
   
-## Prerequisites
+## 前提条件
 
-- Must have completed **Lab 6: Forms**
+- **ラボ 6: フォーム** を完了している必要があります。
 
-## Detailed steps
+## 詳細な手順
 
-## Exercise 1 – Manage
+## 演習 1 – 管理
 
-### Task 1.1 - Share the Booking Request app
+### タスク 1.1 - 予約リクエスト アプリを共有する
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Power Apps メーカー ポータル <https://make.powerapps.com> に移動します。
 
-1. Make sure you are in the **Dev One** environment.
+1. **Dev One** 環境にいることを確認します。
 
-1. Select the **Apps** tab from the left-side menu.
+1. 左側メニューから **Apps** タブを選択します。
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Share**.
+1. **Booking Request app** を選択し、コマンド (**...**) を選択し、 **Share** を選択します。
 
     ![Screenshot of share action for an app.](../media/share-app-action.png)
 
-1. In the Share pane, enter `Everyone` and select **Everyone in Contoso**.
+1. 共有ペインで、 `Everyone` と入力し、 **Everyone in Contoso** を選択します。
 
     ![Screenshot of share app pane.](../media/share-app-pane.png)
 
-1. Select **Share**.
+1. **Share** を選択します。
 
-1. **Close** the Share app pane.
+1. 共有アプリペインを **Close** します。
 
-### Task 1.2 - Publish the Booking Request app
+### タスク 1.2 - Booking リクエスト アプリを公開する
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Details**.
+1. **Booking Request app** を選択し、コマンド (**...**) を選択し、 **Details** を選択します。
 
-1. Select the **Versions** tab.
+1. **Versions** タブを選択します。
 
     ![Screenshot of app versions.](../media/app-versions.png)
 
-1. Select the highest version.
+1. 最も上位のバージョンを選択します。
 
     ![Screenshot of publishing latest version.](../media/app-publish.png)
 
-1. Select **Publish this version**.
+1. **Publish this version** を選択します。
 
-1. Select **Publish this version** again.
+1. **Publish this version** を再度選択します。
 
-## Exercise 2 – Export
+## 演習 2 – エクスポート
 
-### Task 2.1 - Export the Booking Request app
+### タスク 2.1 - Booking リクエスト アプリをエクスポートする
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Power Apps メーカー ポータル <https://make.powerapps.com> に移動します。
 
-1. Make sure you are in the **Dev One** environment.
+1. **Dev One** 環境にいることを確認します。
 
-1. Select the **Apps** tab from the left-side menu.
+1. 左側のメニューから **Apps** タブを選択します。
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Export package**.
+1. **Booking Request app** を選択し、コマンド (**...**) を選択し、 **Export package** を選択します。
 
     ![Screenshot of export app page.](../media/export-package.png)
 
-1. Enter `Booking Request app` for Name
+1. 名前に `Booking Request app` と入力します。
 
-1. Select **Update** under **IMPORT SETUP**.
+1. **IMPORT SETUP** で、 **Update** を選択します。
 
-1. Select **Create as new** and select **Save**.
+1. **Create as new** を選択し、 **Save** を選択します。
 
-1. Select **Export**.
+1. **Export** を選択します。
 
-1. Wait for package to be created and downloaded. This creates a zip file in your Downloads folder.
+1. パッケージが作成されてダウンロードされるまで待ちます。これにより、ダウンロードフォルダーに zip フィルが作成されます。
 
-### Task 2.2 - Save the app locally
+### タスク 2.2 - アプリをローカルに保存する
 
-1. Select the **Apps** tab from the left-side menu.
+1. 左側のメニューから、 **Apps** タブを選択します。
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Edit > Edit in new tab**.
+1. **Booking Request app** を選択し、コマンド (**...**) を選択し、 **Edit > Edit in new tab** を選択します。
 
-1. Select the Select the drop-down caret next to **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある **Save** の横にあるドロップダウンキャレットを選択します。
 
-1. Select **Download a copy**.
+1. **Download a copy** を選択します。
 
-1. Select **Download**.  This creates a msapp file in your Downloads folder.
+1. **Download** を選択します。これにより、ダウンロードフォルダーに msapp ファイルが作成されます。
 
-1. Select the **<- Back** button from the top left of the command bar, and select **Leave** to exit the app.
+1. コマンドバーの左上にある **<- Back** ボタンを選択し、 **Leave** を選択してアプリを終了します。
