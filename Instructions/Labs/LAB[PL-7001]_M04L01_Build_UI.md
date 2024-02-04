@@ -1,90 +1,90 @@
 ---
 lab:
-    title: 'Lab 4: Build the UI'
-    module: 'Module 4: How to build the UI in a canvas app in Power Apps'
+    title: 'ラボ 4: UI を構築する'
+    module: 'モジュール 4: Power Apps のキャンバス アプリで UI を構築する方法'
 ---
 
-# Practice Lab 4 – Build the UI
+# 演習 4 – UI を構築する
 
-In this lab you will change the colors of the controls in the app.
+このラボでは、アプリ内のコントロールの色を変更します。
 
-## What you will learn
+## 学習する内容
 
-- How to use themes
-- How to personalize your app
+- テーマの使用方法
+- アプリをパーソナライズする方法
 
-## High-level lab steps
+## ハイレベルラボの手順
 
-- Select a theme
-- Personalization
+- テーマの選択
+- パーソナライゼーション
   
-## Prerequisites
+## 前提条件
 
-- Must have completed **Lab 3: Create a canvas app**
+- **ラボ 3: キャンバスアプリを作成する** を完了している必要があります。
 
-## Detailed steps
+## 詳細な手順
 
-## Exercise 1 – Theme
+## 演習 1 – テーマ
 
-### Task 1.1 - Edit the app
+### タスク 1.1 - アプリを編集する
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Power Apps メーカー ポータル <https://make.powerapps.com> に移動します。
 
-1. Make sure you are in the **Dev One** environment.
+1. **Dev One** 環境にいることを確認します。
 
-1. Select the **Apps** tab from the left-side menu.
+1. 左側メニューから **Apps** タブを選択します。
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Edit > Edit in new tab**.
+1. **Booking Request app** を選択し、コマンド(**...**) を選択し、 **Edit > Edit in new tab** を選択します。
 
-### Task 1.2 - Select a theme
+### タスク 1.2 - テーマの選択
 
-1. In action bar in the Power Apps Studio, select **Theme**.
+1. Power Apps Studio のアクションバーで、 **Theme** を選択します。
 
     ![Screenshot of select themes.](../media/select-theme.png)
 
-1. Select the **Red** theme.
+1. **Red** テーマを選択します。
 
-### Task 1.3 - Brand controls
+### タスク 1.3 - ブランド管理
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand the gallery.
+1. ギャラリーを展開します。
 
-1. Select **NextArrow**.
+1. **NextArrow** を選択します。
 
-1. Set the **Color** property of NextArrow to:
+1. NextArrow の **Color** プロパティを次のように設定します:
 
     ```powerappsfl
     RGBA(164, 38, 44, 1)
     ```
 
-1. Select **Body**.
+1. **Body** を選択します。
 
-1. Set the **Color** property of Body to:
+1. Body の **Color** プロパティを次のように設定します:
 
     ```powerappsfl
     If(ThisItem.Cost > 1000, RGBA(164, 38, 44, 1), Color.Black)
     ```
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Sutido の右上にある **Save** を選択します。
 
-## Exercise 2 – Personalization
+## 演習 2 – パーソナライゼーション
 
-### Task 2.1 - Add user label
+### タスク 2.1 - ユーザーラベルの追加
 
-1. Click outside of the gallery on the blank canvas.
+1. 空白のキャンバスでギャラリーの外側をクリックします。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの選択メニューで、 **Insert (+)** を選択します。
 
-1. Select **Text label**.
+1. **Text label** を選択します。
 
-1. Drag the label to the top right of the screen.
+1. ラベルを画面の右上にドラッグします。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the label to `UserLabel`.
+1. ラベルの名前を `UserLabel` に変更します。
 
-1. Set the properties of the label as follows:
+1. ラベルのプロパティを次のように設定します:
 
    1. X=`1100`
    1. Y=`20`
@@ -98,6 +98,6 @@ In this lab you will change the colors of the controls in the app.
 
     ![Screenshot of the main screen with personalization.](../media/main-screen-personalized.png)
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある **Save** を選択します。
 
-1. Select the **<- Back** button from the top left of the command bar, and select **Leave** to exit the app.
+1. コマンドバーの左上にある **<- Back** ボタンを選択し、 **Leave** を選択し、アプリを終了します。
