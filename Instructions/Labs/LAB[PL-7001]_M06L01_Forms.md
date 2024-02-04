@@ -1,127 +1,127 @@
 ---
 lab:
-    title: 'Lab 6: Forms'
-    module: 'Module 6: Write data in a Power Apps canvas app'
+    title: 'ラボ 6: フォーム'
+    module: 'モジュール 6: Power Apps キャンバス アプリにデータを書き込む'
 ---
 
-# Practice Lab 6 – Forms
+# 演習 6 – フォーム
 
-In this lab you will use forms to create and edit records in a data source.
+このラボでは、フォームを使用してデータ ソース内のレコードを作成および編集します。
 
-## What you will learn
+## 学習する内容
 
-- How to add screens
-- How to navigate between screens
-- How to use a form to create a record in a data source
-- How to use a form to edit a record in a data source
-- How to delete a record from a data source
-- How to link a form to a gallery
+- 画面の追加方法
+- 画面間を移動する方法
+- フォームを使用してデータ ソースにレコードを作成する方法
+- フォームを使用してデータ ソース内のレコードを編集する方法
+- データソースからレコードを削除する方法
+- フォームをギャラリーにリンクする方法
 
-## High-level lab steps
+## ハイレベルラボの手順
 
-- Create new screens
-- Navigate to a screen when a record is selected in a gallery
-- Navigate between screens
-- Display a record with a form
-- Delete a record
-- Edit a record with a form
-- Create a new record with a form
+- 新しい画面を作成する
+- ギャラリーでレコードが選択されているときの画面に移動します
+- 画面間を移動する
+- フォームでレコードを表示する
+- レコードを削除する
+- フォームを使用してレコードを編集する
+- フォームで新しいレコードを作成する
   
-## Prerequisites
+## 前提条件
 
-- Must have completed **Lab 5: External data**
+- **ラボ 5: 外部データ** を完了している必要があります。
 
-## Detailed steps
+## 詳細な手順
 
-## Exercise 1 – Add screens and navigation
+## 演習 1 – 画面とナビゲーションを追加する
 
-### Task 1.1 - Edit the app
+### タスク 1.1 - アプリを編集する
 
-1. Navigate to the Power Apps Maker portal <https://make.powerapps.com>.
+1. Power Apps メーカー ポータル <https://make.powerapps.com> に移動します。
 
-1. Make sure you are in the **Dev One** environment.
+1. **Dev One** 環境にいることを確認します。
 
-1. Select the **Apps** tab from the left-side menu.
+1. 左側メニューから **Apps** タブを選択します。
 
-1. Select the **Booking Request app**, select the Commands (**...**), and select **Edit > Edit in new tab**.
+1. **Booking Request app** を選択し、コマンド (**...**) を選択し、 **Edit > Edit in new tab** を選択します。
 
-### Task 1.2 - Add screens
+### タスク 1.2 - 画面の追加
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. In action bar in the Power Apps Studio, select **New screen**.
+1. Power Apps Studio のアクションバーで、 **New screen** を選択します。
 
     ![Screenshot of new screen.](../media/add-screen.png)
 
-1. Select **Blank**.
+1. **Blank** を選択します。
 
-1. Rename the screen to `EditScreen`.
+1. 画面の名前を `EditScreen` に変更します。
 
-1. In action bar in the Power Apps Studio, select **New screen**.
+1. Power Apps Studio のアクションバーで、 **New screen** を選択します。
 
-1. Select **Header and footer**.
+1. **Header and footer** を選択します。
 
-1. Rename the screen to `DetailScreen`.
+1. 画面の名前を `DetailScreen` に変更します。
 
-### Task 1.3 - Add navigation
+### タスク 1.3 - ナビゲーションの追加
 
-1. Select **NextArrow** in **BookingRequestList** in the **MainScreen**.
+1. **MainScreen** 画面の  **BookingRequestList** で、 **NextArrow** を選択します。
 
-1. Set the **OnSelect** property of NextArrow to:
+1. NextArrow の **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Collect(colRequests, ThisItem);Navigate(DetailScreen, ScreenTransition.Cover);
     ```
 
-1. Select **EditScreen**.
+1. **EditScreen** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、**Insert (+)** を選択します。
 
-1. Expand **Icons**.
+1. **Icons** を展開します。
 
-1. Select **Back arrow**.
+1. **Back arrow** を選択します。
 
-1. Set the **OnSelect** property of the icon to:
+1. icon の **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Back()
     ```
 
-1. In the **Tree view**, select the icon and select the Commands (**...**) and select **Copy**.
+1. **Tree view** で、アイコンを選択し、コマンド (**...**) を選択し、 **Copy** を選択します。
 
-1. Expand **DetailScreen**.
+1. **DetailScreen** を展開します。
 
-1. Select **HeaderContainer** and select the Commands (**...**) and select **Paste**.
+1. **HeaderContainer** を選択し、コマンド (**...**) を選択し、 **Paste** を選択します。
 
-## Exercise 2 – Details screen
+## 演習 2 – 詳細画面
 
-### Task 2.1 - Add display form
+### タスク 2.1 - 表示フォームの追加
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand **DetailScreen**.
+1. **DetailScreen** を展開します。
 
-1. Expand **ScreenContainer**.
+1. **ScreenContainer** を展開します。
 
-1. Select  **MainContainer**.
+1. **MainContainer** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Expand **Input**.
+1. **Input** を展開します。
 
-1. Select  **Display form**.
+1. **Display form** を選択します。
 
     ![Screenshot of adding a display form.](../media/add-display-form.png)
 
-1. In the FormViewer's properties, select **Booking Requests** for **Data source**.
+1. FormViewer プロパティで、  **Data source** に **Booking Requests** を選択します。
 
-1. Select **2 selected** next to **Fields**.
+1. **Fields** 横にある **2 selected** を選択します。
 
     ![Screenshot of default form fields.](../media/add-fields-default.png)
 
-1. Remove **Created On** by selecting the ellipses (**...**) next to the field and selecting **Remove**.
+1. field の横にある省略記号  (**...**) を選択し、 **Remove** を選択し、 **Created On** を削除します。
 
-1. Select **+ Add field** and select the following fields:
+1. **+ Add field** を選択し、次のフィールドを選択します:
 
    1. Cost
    1. Decision
@@ -132,9 +132,9 @@ In this lab you will use forms to create and edit records in a data source.
 
     ![Screenshot of adding fields to the form.](../media/add-fields.png)
 
-1. Select **Add**.
+1. **Add** を追加します。
 
-1. Drag the fields into the following order:
+1. フィールドを次の順序でドラッグします:
 
    1. Pet Name
    1. Owner Name
@@ -146,85 +146,85 @@ In this lab you will use forms to create and edit records in a data source.
 
     ![Screenshot of sorting the form fields.](../media/add-fields-sorted.png)
 
-1. **Close** the **Fields** pane.
+1. **Fields** ペインで **Close** を選択します。
 
-1. Set the **Item** property of the form viewer control to:
+1. form viewer コントロールの **Item** プロパティを次のように設定します:
 
     ```powerappsfl
     BookingRequestList.Selected
     ```
 
-### Task 2.2 - Add label
+### タスク 2.2 - ラベルの追加
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand **DetailScreen**.
+1. **DetailScreen** を展開します。
 
-1. Expand **ScreenContainer**.
+1. **ScreenContainer** を展開します。
 
-1. Select  **FooterContainer**.
+1. **FooterContainer** を選択します。
 
-1. Select  **+** within the Footer container.
+1. Footer コンテイナー内で、 **+** を選択します。
 
     ![Screenshot of adding a control to the container.](../media/add-control-container.png)
 
-1. Select **Text label**
+1. **Text label** を選択します。
 
-1. Set the **Text** property of the label to:
+1. ラベルの **Text** プロパティを次のように設定します:
 
     ```powerappsfl
     BookingRequestList.Selected.'Pet Name'
     ```
 
-### Task 2.3 - Add delete button
+### タスク 2.3 - 削除ボタンの追加
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand **DetailScreen**.
+1. **DetailScreen** を展開します。
 
-1. Expand **ScreenContainer**.
+1. **ScreenContainer** を展開します。
 
-1. Select  **FooterContainer**.
+1. **FooterContainer** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Button**.
+1. **Button** を選択します。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the Button to `Deletebtn`.
+1. Button の名前を `Deletebtn` に変更します。
 
-1. Set the **Text** property of the button to:
+1. Button の **Text** プロパティを次のように設定します:
 
     ```powerappsfl
     "Delete"
     ```
 
-1. Set the **OnSelect** property of the button to:
+1. Button の **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Remove('Booking Requests', BookingRequestList.Selected); Back();
     ```
 
-## Exercise 3 – Edit screen
+## 演習 3 – 編集画面
 
-### Task 3.1 - Add Edit form
+### タスク 3.1 - 編集フォームの追加
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Select **EditScreen**.
+1. **EditScreen** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select  **Edit form**.
+1. **Edit form** を選択します。
 
-1. In the Form's properties, select **Booking Requests** for **Data source**.
+1. Form のプロパティで、 **Data source** に **Booking Requests** を選択します。
 
-1. Select **2 selected** next to **Fields**.
+1. **Fields** の横にある **2 selected** を選択します。
 
-1. Remove **Created On** by selecting the ellipses (**...**) next to the field and selecting **Remove**.
+1. field の横にある省略記号 (**...**) を選択し、 **Remove** を選択し、 **Created On** を削除します。
 
-1. Select **+ Add field** and select the following fields:
+1. **+ Add field** を選択し、次のフィールドを選択します:
 
    1. Cost
    1. End Date
@@ -232,9 +232,9 @@ In this lab you will use forms to create and edit records in a data source.
    1. Owner Name
    1. Start Date
 
-1. Select **Add**.
+1. **Add** を選択します。
 
-1. Drag the fields into the following order:
+1. フィールドを次の順序でドラッグします:
 
    1. Pet Name
    1. Owner Name
@@ -243,19 +243,19 @@ In this lab you will use forms to create and edit records in a data source.
    1. End Date
    1. Cost
 
-1. **Close** the **Fields** pane.
+1.  **Fields** ペインを **Close** します。
 
-1. Set the **Item** property of the form control to:
+1. フォームコントロールの **Item** プロパティを次のように設定します:
 
     ```powerappsfl
     BookingRequestList.Selected
     ```
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the form to `BookingRequestForm`.
+1. フォームの名前を `BookingRequestForm` に変更します。
 
-1. Set the properties of the form as follows:
+1. フォームのプロパティを次のように設定します:
 
    1. X=`0`
    1. Y=`125`
@@ -266,85 +266,85 @@ In this lab you will use forms to create and edit records in a data source.
 
     ![Screenshot of the configured booking request form.](../media/bookingrequestform.png)
 
-### Task 3.2 - Add Submit button
+### タスク 3.2 - 送信ボタンの追加
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Select **EditScreen**.
+1. **EditScreen** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Select **Button**.
+1. **Button** を選択します。
 
-1. Drag the button below the form.
+1. ボタンをフォームの下にドラッグします。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the Button to `Submitbtn`.
+1. ボタンの名前を `Submitbtn` に変更します。
 
-1. Set the **Text** property of the button to:
+1. ボタンの **Text** プロパティを次のように設定します:
 
     ```powerappsfl
     "Submit"
     ```
 
-1. Set the **OnSelect** property of the button to:
+1. ボタンの **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     SubmitForm(BookingRequestForm)
     ```
 
-1. Select **BookingRequestForm**.
+1. **BookingRequestForm** を選択します。
 
-1. Set the **OnSuccess** property of the button to:
+1. ボタンの **OnSuccess** プロパティを次のように設定します:
 
     ```powerappsfl
     Navigate(MainScreen, ScreenTransition.UnCover)
     ```
 
-### Task 3.3 - Add navigation to the edit screen
+### タスク 3.3 - 編集画面にナビゲーションを追加する
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Expand **DetailScreen**.
+1. **DetailScreen** を展開します。
 
-1. Expand **ScreenContainer**.
+1. **ScreenContainer** を展開します。
 
-1. Select  **HeaderContainer**.
+1. **HeaderContainer** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Expand **Icons**.
+1. **Icons** を展開します。
 
-1. Select **Edit**.
+1. **Edit** を選択します。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the icon to `EditIcon`.
+1. アイコンの名前を `EditIcon` に変更します。
 
-1. Set the **OnSelect** property of the icon to:
+1. アイコンの **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     Navigate(EditScreen, ScreenTransition.Cover)
     ```
 
-### Task 3.4 - New record
+### タスク 3.4 - 新しいレコード
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Select **MainScreen**.
+1. **MainScreen** を選択します。
 
-1. In the app authoring menu, select **Insert (+)**.
+1. アプリの作成メニューで、 **Insert (+)** を選択します。
 
-1. Expand **Icons**.
+1. **Icons** を展開します。
 
-1. Select **Add**.
+1. **Add** を選択します。
 
-1. In the app authoring menu, select **Tree view**.
+1. アプリの作成メニューで、 **Tree view** を選択します。
 
-1. Rename the icon to `NewIcon`.
+1. アイコンの名前を `NewIcon` に変更します。
 
-1. Set the properties of the icon as follows:
+1. アイコンのプロパティを次のように設定します:
 
    1. X=`0`
    1. Y=`0`
@@ -352,12 +352,12 @@ In this lab you will use forms to create and edit records in a data source.
    1. Width=`80`
    1. Color=`Color.White`
 
-1. Set the **OnSelect** property of the icon to:
+1. アイコンの **OnSelect** プロパティを次のように設定します:
 
     ```powerappsfl
     NewForm(BookingRequestForm);Navigate(EditScreen, ScreenTransition.Cover)
     ```
 
-1. Select **Save** in the top-right of the Power Apps Studio.
+1. Power Apps Studio の右上にある **Save** を選択します。
 
-1. Select the **<- Back** button from the top left of the command bar, and select **Leave** to exit the app.
+1. コマンドバーの左上にある **<- Back** ボタンを選択し、 **Leave** アプリを終了します。
